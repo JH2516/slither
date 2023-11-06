@@ -11,7 +11,7 @@ window.onload = function () {
     var mouseY = 0;
     var player = [];
     var bodyCount = 1;
-    var speedCount = 20;
+    var speedCount = 40;
     var startTime;
     var delayCount = 0;
     var appleScalar = 0;
@@ -196,7 +196,8 @@ window.onload = function () {
         player.push(new PlayerHeadObject());
         startTime = new Date().getTime();
         startbutton.style.display = 'none';
-        player.push(new PlayerHeadObject());
+        player.push(new PlayerBodyObject());
+        player.push(new PlayerBodyObject());
         apple = new Apple(100,100);
         apple.draw();
         triangle = new EquilateralTriangle(200,200);
@@ -286,9 +287,9 @@ window.onload = function () {
         player.push(new PlayerBodyObject());
         bodyCountText.textContent = `몸뚱이:${bodyCount}`;
         if (bodyCount%5 == 0) {
-            triangle.speed += 1;
-            nemonemo.speed += 1;
-            Circle.speed += 1;
+            triangle.speed += 0.1;
+            nemonemo.speed += 0.1;
+            Circle.speed += 0.1;
             level ++;
         }
         levelCountText.textContent = `레벨${level}`
